@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Axolote Cibernético</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="bg-layer"></div>
+
+  <main class="game">
+    <h1>⚡ Axo-9</h1>
+    <p id="world-info">Carregando mundo...</p>
+    <p id="humor-info"></p>
+
+    <div class="pet-area">
+      <img id="pet-img" src="assets/images/combo_base.png" alt="Axo-9">
+
+      <div id="gameover-screen">
+        <img src="assets/images/emotion_broken.png" alt="Axo-9 quebrado">
+        <h2>💀 GAME OVER</h2>
+        <p id="gameover-msg"></p>
+        <button id="btn-reiniciar">🔄 Reiniciar</button>
+      </div>
+    </div>
+
+    <div class="item-display" id="item-display"></div>
+
+    <section class="bars">
+      <div class="bar-row">
+        <span>🍖 Fome</span>
+        <div class="bar"><div id="bar-fome" class="fill"></div></div>
+      </div>
+      <div class="bar-row">
+        <span>⚡ Energia</span>
+        <div class="bar"><div id="bar-energia" class="fill"></div></div>
+      </div>
+      <div class="bar-row">
+        <span>😊 Felicidade</span>
+        <div class="bar"><div id="bar-felicidade" class="fill"></div></div>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="btn-alimentar">
+        <img src="assets/images/item_medkit.png" alt="">
+        Alimentar
+      </button>
+      <button id="btn-brincar">
+        <img src="assets/images/item_candy.png" alt="">
+        Brincar
+      </button>
+      <button id="btn-dormir">
+        <img src="assets/images/item_potion.png" alt="">
+        Recarregar
+      </button>
+      <button id="btn-pecas">
+        <img src="assets/images/part_arm.png" alt="">
+        Peças
+      </button>
+    </section>
+
+    <!-- Modal de peças -->
+    <div id="pecas-modal" style="display:none; position:absolute; inset:0; background:rgba(0,0,0,0.88); border-radius:14px; z-index:20; flex-direction:column; align-items:center; justify-content:center; gap:14px;">
+      <h3 style="color:#4aa8ff; letter-spacing:1px;">⚙️ Peças</h3>
+      <div id="pecas-lista" style="display:flex; flex-direction:column; gap:10px; width:80%;"></div>
+      <button id="btn-fechar-pecas" style="background:#ff5d5d; color:#fff; margin-top:4px;">✖ Fechar</button>
+    </div>
+
+    <p id="message"></p>
+  </main>
+
+  <script src="js/strategy/Humores.js"></script>
+  <script src="js/factory/Comidas.js"></script>
+  <script src="js/factory/FoodFactory.js"></script>
+  <script src="js/observer/Subject.js"></script>
+  <script src="js/observer/UIObserver.js"></script>
+  <script src="js/observer/SoundObserver.js"></script>
+  <script src="js/singleton/GameManager.js"></script>
+  <script src="js/Pecas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
